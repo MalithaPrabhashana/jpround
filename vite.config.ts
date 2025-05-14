@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => ({
     },
 
     // Explicit middleware ensures full coverage:
-    configureMiddleware: (server: any) => {
+    configureServer(server: any) {
       server.middlewares.use((req: any, res: any, next: any) => {
         res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
         res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
